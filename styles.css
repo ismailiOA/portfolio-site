@@ -790,3 +790,39 @@ button:hover {
     flex-direction: column;
   }
 }
+
+/* BACK TO TOP BUTTON - default for desktop */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* stays on the right for desktop */
+  background: #111;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Hide initially */
+#back-to-top.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  #back-to-top {
+    left: 50%; /* center horizontally */
+    right: auto; /* override right */
+    transform: translateX(-50%); /* center properly */
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
